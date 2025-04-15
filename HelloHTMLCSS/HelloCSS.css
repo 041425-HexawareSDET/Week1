@@ -1,0 +1,52 @@
+/*This is an external stylesheet - the best practice when styling HTML with CSS*/
+
+/*Every paragraph tag to be BLUE and CENTERED*/
+/*ELEMENT SELECTOR*/
+p {
+    color:blue;
+    text-align:center
+}
+
+/*Style the big header and small header*/
+/*ID SELECTOR - good for uniquely styling individual components*/
+#bigHeader {
+    background-color: maroon;
+}
+
+#smallHeader {
+    background-color: tomato;
+}
+
+/*Style the lists*/
+/*CLASS SELECTOR - good for styling multiple elements at once*/
+.list {
+    margin:100px; /*margin makes space between an element and its neighbors*/
+    border:groove 15px green; /*border gives a visible border around the element*/
+    border-radius: 10%;
+    padding:100px; /*padding makes space between the content and its border*/
+    font-family:'Trebuchet MS';
+    font-weight:bolder;
+    font-style: italic;
+}
+
+/*Style EVERY element*/
+* {
+    background-color:cadetblue;
+}
+
+/*flexbox - lets us format and position elements with ease*/
+#checkBoxContainer{
+    display:flex; /*this turns the element into a flexbox*/
+    /*flexbox turns child elements into a row by default*/
+    justify-content: end;
+    gap:300px;
+}
+
+
+
+/*pseudo elements just for fun - */
+/*In this case, we're styling only the first element nested in any div*/
+div *:first-child{
+    background-color: blanchedalmond;
+    color: red; /*the blue from the p selector above gets overridden here*/
+}

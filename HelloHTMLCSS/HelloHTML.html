@@ -1,0 +1,173 @@
+<!DOCTYPE html> <!-- DOCTYPE Declaration (not considered an element). Declares what TYPE of DOCument this is-->
+
+<html lang="en"> <!-- "root tag". The first element in our HTML file. All of our HTML goes in here.-->
+
+<!-- The head is typically metadata. <title> defines the name of the tab when you render this page on a browser-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloHTML</title>
+
+    <style>
+        /*We could have defined CSS in the head, but I won't*/
+    </style>
+
+    <!--This is how we link CSS to our HTML-->
+    <link rel="stylesheet" href="HelloCSS.css">
+
+    <!--Using the bootstrap CDN to access ALL bootstrap styling libraries-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+
+<!-- The body contains all of the actual content you'll see on the webpage -->
+<!-- In other words, this is where your HTML elements live -->
+<body>
+    
+    <!-- h1 through h6 are our "header" elements. Basically bold text. h1 is the biggest -->
+    <h1 id="bigHeader" title="I'm the header!">Hello HTML! We are writing some front end code.</h1>
+
+    <h6 id="smallHeader">I am a very small header.</h6>
+
+    <!--Paragraphs are our generic text type-->
+    <p>I'm a paragraph!</p> <p>paragraphs are BLOCK elements</p>
+    <p>Block elements take up an entire BLOCK of the page</p>
+
+    <!--Spans are INLINE text elements-->
+    <span>I'm a span!</span> <span>We are INLINE elements!</span>
+
+    <!--Div is your general DIVision element-->
+    <!--We usually use these to organize the page and group elements together-->
+    <!--CSS: we are using INLINE styling for this div (not best practice)-->
+    <div style="border: solid 2px">
+        <p>I'm a paragraph in a div!</p>
+        <span>I'm a span in a div!</span>
+    </div>
+
+    <!--------------------------(LISTS)-->
+
+    <h3>Our Favorite Animals</h3>
+
+    <!--Ordered Lists list items in 1, 2, 3... format-->
+    <ol class="list">
+        <li>Capybara</li>
+        <li>Owl</li>
+        <li>Snake</li>
+        <li>Horse</li>
+        <li>Turtle</li>
+        <li>Platypus</li>
+    </ol>
+
+    <h4>Our Favorite Foods</h4>
+
+    <!--Unordered Lists list items in bulleted format-->
+    <ul class="list">
+        <li>Kiwi</li>
+        <li>Cheese</li>
+        <li>Eggs</li>
+        <li>Pizza</li>
+        <li>Hamburgers</li>
+    </ul>
+
+    <!-------------------------------------(Tables)-->
+
+    <!--Tables are great for displaying data, though they're a little verbose-->
+    <table class="table table-primary table-hover w-50">
+        <thead> <!--Header row for a table-->
+            <tr> <!--tr == new row-->
+                <th>Associate Name</th> <!--th == header cell-->
+                <th>Favorite Sport</th>
+            </tr>
+        </thead>
+
+        <tbody> <!--tbody == the body of the table (the data)-->
+            <tr>
+                <td>Alex</td> <!--td == table data cell-->
+                <td>Tennis</td>
+            </tr>
+            <tr>
+                <td>Juan</td>
+                <td>Baseball</td>
+            </tr>
+            <tr>
+                <td>Ben</td>
+                <td>Basketball</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Calisthenics</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!----------------------------------(Input types)-->
+
+    <!--These are line breaks - they create empty lines on the document-->
+    <br><br>
+
+    <p>Enter your username: </p>
+    <input type="text" placeholder="Ex. HtmlDude123">
+
+    <p>Enter your password: </p>
+    <input type="password" placeholder="Ex. password">
+
+    <p>Enter your age: </p>
+    <input type="number">
+
+    <!--Radio buttons let you choose ONLY one option-->
+
+    <div>
+
+        <h3>Choose an Option:</h3>
+
+        <input type="radio" name="radioGroup" id="radio1">
+        <label for="radio1">Yes</label>
+
+        <input type="radio" name="radioGroup" id="radio2">
+        <label for="radio2">No</label>
+
+    </div>
+
+    <!--Checkboxes allow us to choose MULTIPLE options-->
+
+    <div id="checkBoxContainer">
+
+        <h3>How are you doing?</h3>
+
+        <div>
+            <input type="checkbox" name="checkGroup" id="check1">
+            <label for="check1">Good</label>
+        </div>
+        
+        <div>
+            <input type="checkbox" name="checkGroup" id="check2">
+            <label for="check2">Bad</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="checkGroup" id="check3">
+            <label for="check3">Indifferent</label>
+        </div>
+
+    </div>
+
+    <!--We can use the "select" element to create dropdowns-->
+
+    <br><br>
+
+    <select name="Colors" id="colorsDropdown">
+        <option value="" disabled selected>Choose a color</option>
+        <option value="Green">Green</option>
+        <option value="Blue">Blue</option>
+        <option value="Red">Red</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Purple">Purple</option>
+        <option value="Fuschia" style="background-color: fuchsia;">Fuschia</option>
+    </select>
+
+    <br><br><br>
+
+    <button class="btn btn-outline-dark btn-lg">You can click me, but I won't do anything without Javascript</button>
+
+</body>
+</html>
