@@ -1,6 +1,7 @@
 //PokeAPI base url - making a variable that holds the base URL for PokeAPI for the sake of cleaner/standardized code
 const url = "https://pokeapi.co/api/v2/pokemon/"
 
+
 //DOM selection for the elements we'll fill with pokemon data after the fetch request
 const pokename = document.getElementById("pokename")
 const poketype = document.getElementById("poketype")
@@ -26,13 +27,17 @@ async function fetchData(){
     try{
         const response = await fetch(url + userInput)
 
+        if(response.status != 200){ //good way to check for unexpected (but not erroneous) returns
+            throw error
+        }
+
         //turn the reponse data into a JavaScript object
         const data = await response.json()
 
         console.log(data) //See the data in the console!
 
         renderHTML(data)
-    } catch {
+    } catch(error) {
         //If the user searches for a poke id that doesn't exist, just yell at them
         alert("Pokemon with id " + userInput + " doesn't exist")
     } finally {
@@ -80,3 +85,15 @@ function renderHTML(data){
     document.getElementById("pokeCollection").appendChild(img)
 
 }
+
+
+/* Fake fetch request with POST instead of of GET (which needs the config object) 
+
+
+   let response = await fetch(URL, {
+        method: "POST",
+        body: JSON.stringify(someObject), //stringify() turns the object into JSON (the format HTTP bodies prefer)
+        headers: {Content-Type: "application/json"}
+   })
+
+*/
