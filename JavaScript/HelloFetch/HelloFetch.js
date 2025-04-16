@@ -32,7 +32,7 @@ async function fetchData(){
         }
 
         //turn the reponse data into a JavaScript object
-        const data = await response.json()
+        const data = await response.json() //This is what's extracting the data out of the promise object
 
         console.log(data) //See the data in the console!
 
