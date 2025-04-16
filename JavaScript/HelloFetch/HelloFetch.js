@@ -33,7 +33,10 @@ async function fetchData(){
 
         renderHTML(data)
     } catch {
-        //TODO: catch errors
+        //If the user searches for a poke id that doesn't exist, just yell at them
+        alert("Pokemon with id " + userInput + " doesn't exist")
+    } finally {
+        //TODO: we could have added something else, for cleanup, or telling the user to find a new pokemon, etc
     }
 
 }
