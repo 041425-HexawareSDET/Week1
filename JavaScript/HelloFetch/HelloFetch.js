@@ -45,7 +45,24 @@ function renderHTML(data){
 
     pokename.innerText = data.name
 
-    //TODO: render type
+    //render type - loop through the types array in the data
+    //then add each type name to this "types" string
+
+    //OLD WAY - still works but less elegant!
+
+    // let types = ""
+
+    // for(let element of data.types){
+    //     types += element.type.name + " "
+    // }
+
+    // poketype.innerText = types
+
+    //trying a fancier way - the reduce() function
+    //acc == "accumulator", this is what accumulates all the values into one
+    //element == the type object we're extract the name from
+    //the "" at the end is our initial value that gets added to. What our accumulator starts with
+    poketype.innerText = data.types.reduce((acc, element) => acc + element.type.name + " ", "")
 
     pokenum.innerText = data.id
 
@@ -53,7 +70,10 @@ function renderHTML(data){
     //We'll set the "src" attribute to the pokemon's image
     pokepic.setAttribute("src", data.sprites.front_default)
 
-    //TODO: add the pokemon image to the collection at the bottom of the page using the appendChild() function
+    //Add the pokemon image to the collection at the bottom of the page using createElement() and appendChild()
+    const img = document.createElement("img")
+    img.src = data.sprites.front_default
 
+    document.getElementById("pokeCollection").appendChild(img)
 
 }
