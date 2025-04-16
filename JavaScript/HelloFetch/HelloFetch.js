@@ -25,7 +25,7 @@ async function fetchData(){
     //(Fetch sends a GET by default by the way)
 
     try{
-        const response = await fetch(url + userInput)
+        const response = await fetch(url + userInput) //save the promise object into a variable
 
         if(response.status != 200){ //good way to check for unexpected (but not erroneous) returns
             throw error
